@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../sripts/index.js" type="module" defer></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header" id="header">
+
+        <div class="cart-icon">
+            <img id="open-cart" src="../img/cart.png">
+            <span id="cartCount"></span>
+        </div>
+        <ul class="cart-list">
+            <li><a href="./"><img src="../img/laptop.png"></a></li>
+            <li><a href="../headphones/headphones.html"><img src="../img/headphones.png"></a></li>
+            <li><a href="#"><img src="../img/desktop.png"></a></li>
+        </ul>
+        <div class="form-search-div">
+            <form class="form-search" action="/search/" target="_blank">
+                <input type="hidden" name="searchid">
+                <input type="search" name="text" required placeholder="Search">
+                <input type="image" src="../img/lens.png" />
+            </form>
+
+        </div>
+
+    </header>
+    <div class="cart" id="cart">
+        <div class="cart__body">
+            <div class="cart__content" id="cart-content"></div>
+            <button class="btn cart__clear" id="clear-cart">Clear Cart</button>
+            <span class="cart__close" id="close-cart"></span>
+        </div>
+    </div>
+</body>
+</html>

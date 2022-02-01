@@ -1,21 +1,31 @@
 "use strict"
 
+import { renderCart, clearCart as clearCartFunc, addToCart as addToCartFunc , itemCount} from "./cart.js";
+
 const addToCart = document.querySelectorAll(".product__add-cart");
 const cart = document.getElementById("cart");
+const cartCount = document.getElementById("cartCount");
 const cartContent = document.getElementById("cart-content");
 const clearCart = document.getElementById("clear-cart");
 const closeCart = document.getElementById("close-cart");
 const openCart = document.getElementById("open-cart");
 
+itemCount(cartCount);
 openCart.addEventListener("click", openModal);
 closeCart.addEventListener("click", closeModal);
+clearCart.addEventListener("click", clearCartFunc.bind(this, cartContent, cartCount));
 
-function openModal(){
+function openModal() {
+    renderCart(cartContent, cartCount);
     cart.style.display = 'flex';
 }
-function closeModal(){
+function closeModal() {
     cart.style.display = 'none';
 }
-addToCart.forEach((button)=>{
-    button.addEventListener("click", CART.addToCart.bind(CART, ".product__title", ".product__price > span"));
+
+addToCart.forEach((button) => {
+    button.addEventListener("click", e => addToCartFunc(e, ".product__title", ".product__price > span", cartCount));
 });
+
+
+

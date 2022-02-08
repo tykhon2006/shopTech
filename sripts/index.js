@@ -1,6 +1,10 @@
 "use strict"
 
-import { renderCart, clearCart as clearCartFunc, addToCart as addToCartFunc , itemCount} from "./cart.js";
+import { renderCart, clearCart as clearCartFunc, addToCart as addToCartFunc , itemCount, cartComponent} from "./cart.js";
+import { HeaderMenu } from "./headerComponent.js";
+/* регистрируем веб-компоненты */
+customElements.define("header-menu", HeaderMenu);
+customElements.define("cart-component", cartComponent);
 
 const addToCart = document.querySelectorAll(".product__add-cart");
 const cart = document.getElementById("cart");

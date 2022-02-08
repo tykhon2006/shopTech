@@ -11,28 +11,10 @@
 </head>
 
 <body>
-
-    <header class="header" id="header">
-
-        <div class="cart-icon">
-            <img id="open-cart" src="./img/cart.png">
-            <span id="cartCount"></span>
-        </div>
-        <ul class="menu">
-            <li><a href="./" class="menu__link_active menu__link"><img src="./img/laptop.png"></a></li>
-            <li><a href="./headphones/headphones.html" class="menu__link"><img src="./img/headphones.png"></a></li>
-            <li><a href="#" class="menu__link"><img src="./img/desktop.png"></a></li>
-        </ul>
-        <div class="form-search-div">
-            <form class="form-search" action="/search/" target="_blank">
-                <input type="hidden" name="searchid">
-                <input type="search" name="text" required placeholder="Search">
-                <input type="image" src="./img/lens.png" />
-            </form>
-
-        </div>
-
-    </header>
+    <header-menu cart-icon-src="./img/cart.png" link-home-href="#" img-home-src="./img/laptop.png"
+        link-headphones-href="./Headphones/headphones.html" img-headphones-src="./img/headphones.png"
+        link-desktop-href="./Desktop/desktop.html" img-desktop-src="./img/desktop.png" form-search-img="./img/lens.png">
+    </header-menu>
     <main class="product">
         <div class="product__item">
             <h4 class="product__title">Creator 7i</h4>
@@ -142,95 +124,9 @@
             <p class="product__price">Price: <span>$850</span></p>
             <button class="product__add-cart" data-id="11">Add to cart</button>
         </div>
-        <div class="product__item">
-            <h4 class="product__title">E485</h4>
-            <img src="./img/laptops/E485.png" alt="laptop">
-            <p class="product__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum autem, iste
-                delectus ullam officiis omnis. Labore fugiat veritatis voluptatem, eos nostrum, necessitatibus autem
-                debitis et exercitationem non, quasi expedita reiciendis.</p>
-            <p class="product__price">Price: <span>$1650</span></p>
-            <button class="product__add-cart" data-id="12">Add to cart</button>
-        </div>
-        <div class="product__item">
-            <h4 class="product__title">L14</h4>
-            <img src="./img/laptops/L14.png" alt="laptop">
-            <p class="product__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum autem, iste
-                delectus ullam officiis omnis. Labore fugiat veritatis voluptatem, eos nostrum, necessitatibus autem
-                debitis et exercitationem non, quasi expedita reiciendis.</p>
-            <p class="product__price">Price: <span>$1000</span></p>
-            <button class="product__add-cart" data-id="13">Add to cart</button>
-        </div>
-        <div class="product__item">
-            <h4 class="product__title">Gaming 3i Gen 6</h4>
-            <img src="./img/laptops/Gaming 3i Gen 6.png" alt="laptop">
-            <p class="product__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum autem, iste
-                delectus ullam officiis omnis. Labore fugiat veritatis voluptatem, eos nostrum, necessitatibus autem
-                debitis et exercitationem non, quasi expedita reiciendis.</p>
-            <p class="product__price">Price: <span>$3000</span></p>
-            <button class="product__add-cart" data-id="14">Add to cart</button>
-        </div>
-        <div class="product__item">
-            <h4 class="product__title">E14 Gen 2</h4>
-            <img src="./img/laptops/E14 Gen 2.png" alt="laptop">
-            <p class="product__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum autem, iste
-                delectus ullam officiis omnis. Labore fugiat veritatis voluptatem, eos nostrum, necessitatibus autem
-                debitis et exercitationem non, quasi expedita reiciendis.</p>
-            <p class="product__price">Price: <span>$1200</span></p>
-            <button class="product__add-cart" data-id="15">Add to cart</button>
-        </div>
-        <div class="product__item">
-            <h4 class="product__title">L340</h4>
-            <img src="./img/laptops/L340.png" alt="laptop">
-            <p class="product__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum autem, iste
-                delectus ullam officiis omnis. Labore fugiat veritatis voluptatem, eos nostrum, necessitatibus autem
-                debitis et exercitationem non, quasi expedita reiciendis.</p>
-            <p class="product__price">Price: <span>$1500</span></p>
-            <button class="product__add-cart" data-id="16">Add to cart</button>
-        </div>
-        <div class="product__item">
-            <h4 class="product__title">X13</h4>
-            <img src="./img/laptops/X13.png" alt="laptop">
-            <p class="product__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum autem, iste
-                delectus ullam officiis omnis. Labore fugiat veritatis voluptatem, eos nostrum, necessitatibus autem
-                debitis et exercitationem non, quasi expedita reiciendis.</p>
-            <p class="product__price">Price: <span>$1000</span></p>
-            <button class="product__add-cart" data-id="17">Add to cart</button>
-        </div>
-        <div class="product__item">
-            <h4 class="product__title">X1 Titanium Yoga</h4>
-            <img src="./img/laptops/X1 Titanium Yoga.png" alt="laptop">
-            <p class="product__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum autem, iste
-                delectus ullam officiis omnis. Labore fugiat veritatis voluptatem, eos nostrum, necessitatibus autem
-                debitis et exercitationem non, quasi expedita reiciendis.</p>
-            <p class="product__price">Price: <span>$2500</span></p>
-            <button class="product__add-cart" data-id="18">Add to cart</button>
-        </div>
-        <div class="product__item">
-            <h4 class="product__title">X1 Carbon Gen 8</h4>
-            <img src="./img/laptops/X1 Carbon Gen 8.png" alt="laptop">
-            <p class="product__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum autem, iste
-                delectus ullam officiis omnis. Labore fugiat veritatis voluptatem, eos nostrum, necessitatibus autem
-                debitis et exercitationem non, quasi expedita reiciendis.</p>
-            <p class="product__price">Price: <span>$1400</span></p>
-            <button class="product__add-cart" data-id="19">Add to cart</button>
-        </div>
-        <div class="product__item">
-            <h4 class="product__title">X1 Nano</h4>
-            <img src="./img/laptops/X1 Nano.png" alt="laptop">
-            <p class="product__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum autem, iste
-                delectus ullam officiis omnis. Labore fugiat veritatis voluptatem, eos nostrum, necessitatibus autem
-                debitis et exercitationem non, quasi expedita reiciendis.</p>
-            <p class="product__price">Price: <span>$1900</span></p>
-            <button class="product__add-cart" data-id="20">Add to cart</button>
-        </div>
+        
     </main>
-    <div class="cart" id="cart">
-        <div class="cart__body">
-            <div class="cart__content" id="cart-content"></div>
-            <button class="btn cart__clear" id="clear-cart">Clear Cart</button>
-            <span class="cart__close" id="close-cart"></span>
-        </div>
-    </div>
+    <cart-component></cart-component>
 </body>
 
 </html>

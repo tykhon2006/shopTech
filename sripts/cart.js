@@ -83,71 +83,20 @@ function addEventDeleteItemCart(cartContent, elem) {
     });
 }
 
-
-
-
-/* export const CART = {
-    // добавим данные в хранилище
-    setCartData(obj) {
-        localStorage.setItem(CART_KEY, JSON.stringify(obj));
-        return false;
-    },
-    // получаем данные из хранилища
-    getCartData() {
-        return JSON.parse(localStorage.getItem(CART_KEY));
-    },
-    // очищаем корзину
-    clearCart(cartContent) {
-        localStorage.removeItem(CART_KEY);
-        renderCart(cartContent);
-    },
-    // добавляем товар в корзину
-    addToCart(title, price) {
-        let target = event.target;
-        target.disabled = true;
-        const cartData = getCartData() || {};
-        const itemId = target.dataset.id;
-        const parentBox = target.parentElement
-        const itemTitle = parentBox.querySelector(title).textContent;
-        const itemPrice = parentBox.querySelector(price).textContent;
-        if (!cartData.hasOwnProperty(itemId)) {
-            cartData[itemId] = [itemTitle, itemPrice];
-        }
-        if (!setCartData(cartData)) {
-            target.disabled = false;
-        }
-    },
-    // отрисовка корзины
-    renderCart(cartContent) {
-        const cartData = getCartData();
-        let totalItems;
-
-        if (cartData != null) {
-            totalItems = '<table class="product__table"><thead><tr><th>Title</th><th>Price</th></tr></thead><tbody>';
-            for (const id in cartData) {
-                totalItems += '<tr>';
-                for (const value of cartData[id]) {
-                    totalItems += `<td>${value}</td>`
-                }
-                totalItems += `<td><button class="btn cart__delete" data-id=${id} >Delete</button></td>`
-                totalItems += '</tr>';
-            }
-            totalItems += '</tbody></table>';
-            cartContent.innerHTML = totalItems;
-            addEventDeleteItemCart();
-        } else if (cartData === null) {
-            cartContent.innerHTML = "Cart clear";
-        }
-    },
-    // удалить товар 
-    deleteItemCart() {
-        console.log(1);
-    },
-    // добавляем собітие для удаление товара
-    addEventDeleteItemCart() {
-        const closeCart = document.querySelectorAll(".cart__delete");
-        closeCart.forEach(btn => {
-            btn.addEventListener("click", deleteItemCart);
-        });
+export class cartComponent extends HTMLElement {
+    /* 
+    браузер вызовет этот метод при добавлении елемента в документ
+    */
+    connectedCallback() {
+        this.innerHTML = `
+    <div class="cart" id="cart">
+        <div class="cart__body">
+            <div class="cart__content" id="cart-content"></div>
+            <button class="btn cart__clear" id="clear-cart">Clear Cart</button>
+            <span class="cart__close" id="close-cart"></span>
+        </div>
+    </div>
+        `
     }
-} */
+}
+

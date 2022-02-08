@@ -9,6 +9,15 @@ ul {
 img {
     max-width: 100%;
 }
+.header {
+    justify-content: flex-start;
+    position: fixed;
+    min-height: 80px;
+    padding: 10px;
+    width: 100%;
+    background-image: linear-gradient(to right, #e2defd, rgb(253, 255, 234));
+    box-shadow: inset 0 0 3px 1px grey;
+}
 .header,
 .menu {
     display: flex;
@@ -24,18 +33,8 @@ img {
 .menu__link img{
     height: 40px;
 }
-.menu__link_active{
+.header a[href="#"]{
     box-shadow: 0 0 10px 1px gold;
-}
-
-.header {
-    justify-content: flex-start;
-    position: fixed;
-    min-height: 80px;
-    padding: 10px;
-    width: 100%;
-    background-image: linear-gradient(to right, #e2defd, rgb(253, 255, 234));
-    box-shadow: inset 0 0 3px 1px grey;
 }
 .cart-icon {
     width: 60px;
@@ -47,15 +46,16 @@ img {
     position: absolute;
     left: 50%;
     top: 0;
-
     color: red;
 }
 .product {
     display: grid;
-    grid-template-columns: repeat(5, 2fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
     box-shadow: 0 0 5px 2px grey;
     gap: 20px;
-    width: 80%;
+    max-width: 1500px;
+    width: 95%;
     margin: auto;
     padding: 90px 10px 0 20px;
     background-image: linear-gradient(to bottom, rgb(230, 245, 245), rgb(246, 248, 222));
@@ -64,7 +64,7 @@ img {
     border-bottom: 1px ridge grey;
     border-right: 1px ridge grey;
 }
-.product__item:nth-child(5n) {
+.product__item:nth-child(4n) {
     border-right: none;
 }
 .product__item > h4 {
@@ -72,6 +72,33 @@ img {
 }
 .product__item > * {
     padding: 5px;
+}
+@media (max-width: 950px) {
+    .product{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, auto);
+    }
+    .product__item:nth-child(3n) {
+        border-right: none;
+    }
+}
+@media (max-width: 768px) {
+    .product{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, auto);
+    }
+    .product__item:nth-child(2n) {
+        border-right: none;
+    }
+}
+@media (max-width: 540px) {
+    .product{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(12, auto);
+    }
+    .product__item:nth-child(1n) {
+        border-right: none;
+    }
 }
 
 h4 + img {

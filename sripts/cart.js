@@ -37,10 +37,15 @@ export function addToCart(e, title, price, elem) {
 export function renderCart(cartContent, elem) {
     const cartData = getCartData();
     let totalItems;
+    let totalSum = 0;
 
-    if (cartData != null) {
+    if (!cartData || Object.keys(cartData).length === 0) {
+        totalItems = "Cart clear";
+    } else {
+
         totalItems = '<table class="product__table"><thead><tr><th>Title</th><th>Price</th></tr></thead><tbody>';
         for (const id in cartData) {
+            totalSum += +cartData[id][1].slice(1);
             totalItems += '<tr>';
             for (const value of cartData[id]) {
                 totalItems += `<td>${value}</td>`;
@@ -49,12 +54,10 @@ export function renderCart(cartContent, elem) {
             totalItems += '</tr>';
         }
         totalItems += '</tbody></table>';
-        cartContent.innerHTML = totalItems;
-        addEventDeleteItemCart(cartContent, elem);
+        totalItems = `<div>${totalItems}<p>Total Amount: ${totalSum}</p></div>`
     }
-    if (cartData === null || Object.keys(cartData).length === 0) {
-        cartContent.innerHTML = "Cart clear";
-    }
+    cartContent.innerHTML = totalItems;
+    addEventDeleteItemCart(cartContent, elem);
 }
 export function itemCount(elem) {
     const cartData = getCartData();

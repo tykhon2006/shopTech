@@ -30,6 +30,3 @@ function closeModal() {
 addToCart.forEach((button) => {
     button.addEventListener("click", e => addToCartFunc(e, ".product__title", ".product__price > span", cartCount));
 });
-
-
-

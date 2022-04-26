@@ -226,13 +226,39 @@ h4 + img {
     width: 110%;
 }
 
-
+.alert-product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    font-size: 2rem;
+    color:rgb(49, 97, 255);
+    top: 40px;
+    right: 0;
+    left: 0;
+    height: 100px;
+    opacity: 0;
+    animation: alert-product 2s 1; 
+}
+@keyframes alert-product{
+    25%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+}
+.alert-product > p{
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
 .product__table{
     width: 100%;
     border-collapse: collapse;
 }
 .product__table tr td:nth-of-type(1){
-    width: 70%;
+    width: 50%;
 }
 .product__table td,
 .product__table th {

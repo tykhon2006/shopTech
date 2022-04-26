@@ -1,6 +1,6 @@
 "use strict"
 
-import { renderCart, clearCart as clearCartFunc, addToCart as addToCartFunc , itemCount, cartComponent} from "./cart.js";
+import { renderCart, clearCart as clearCartFunc, addToCart as addToCartFunc, itemCount, cartComponent, showItemCart } from "./cart.js";
 import { HeaderMenu } from "./headerComponent.js";
 /* регистрируем веб-компоненты */
 customElements.define("header-menu", HeaderMenu);
@@ -17,10 +17,10 @@ const openCart = document.getElementById("open-cart");
 itemCount(cartCount);
 openCart.addEventListener("click", openModal);
 closeCart.addEventListener("click", closeModal);
-clearCart.addEventListener("click", clearCartFunc.bind(this, cartContent, cartCount));
+clearCart.addEventListener("click", clearCartFunc.bind(this, cartContent, cartCount, addToCart));
 
 function openModal() {
-    renderCart(cartContent, cartCount);
+    renderCart(cartContent, cartCount, addToCart);
     cart.style.display = 'flex';
 }
 function closeModal() {
@@ -28,5 +28,14 @@ function closeModal() {
 }
 
 addToCart.forEach((button) => {
-    button.addEventListener("click", e => addToCartFunc(e, ".product__title", ".product__price > span", cartCount));
+    button.addEventListener("click", e => addToCartFunc(e, ".product__title", ".product__price > span", cartCount, addToCart));
 });
+showItemCart(addToCart);
+
+/* let x;
+if (1 > 0) {
+    x = "yes";
+} else {
+    x = "no";
+} */
+let x = ( 1 > 0) ? "yes" : "no"

@@ -38,7 +38,7 @@ export function addToCart(e, title, price, elem, addCart) {
 
     let alertProduct = document.createElement("div");
     alertProduct.className = "alert-product";
-    alertProduct.innerHTML = `<p><span>${itemTitle}</span> added to cart</p>`
+    alertProduct.innerHTML = `<p><span>${itemTitle}</span> added to cart</p>`;
     document.body.append(alertProduct);
     setTimeout(() => alertProduct.remove(), 3000);
     showItemCart(addCart);
@@ -120,16 +120,49 @@ export class cartComponent extends HTMLElement {
 // показать товар добавленный в корзину 
 export function showItemCart(addCart) {
     const cartData = getCartData();
-    console.log(cartData);
     addCart.forEach((button) => {
         if (cartData && Object.keys(cartData).length !== 0 && cartData.hasOwnProperty(button.dataset.id)) {
             button.textContent = `Added to cart`;
+            button.classList.add("showItemCart");
         }else{
             button.textContent = `Add to cart`;
         }
     });
 }
-export function createItemPage() {
-
+export function createItemPage(e) {
+    if(e.target.tagName === "BUTTON") return ;
+    const itemPage = document.createElement("div");
+    itemPage.className = "item-page";
+    itemPage.innerHTML = `
+    <div class="container item-page__content">
+    <h1>itemTitle</h1>
+    <div class="item-page__img"></div>
+    <p class="item-page__info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci aliquid fugit
+        voluptate amet odit, obcaecati voluptas blanditiis molestias accusamus debitis neque inventore excepturi labore
+        nobis quibusdam sapiente deleniti placeat libero reprehenderit architecto ratione, delectus impedit? Alias sint
+        molestias harum blanditiis neque illo qui ad, sed minus ducimus accusantium facere odit explicabo quam aliquid
+        iure quod. Excepturi similique repudiandae dignissimos recusandae doloremque fugiat porro ducimus autem.
+        Officiis perferendis suscipit sequi facilis, saepe cupiditate, corrupti doloribus quae dignissimos nulla atque
+        obcaecati corporis, doloremque animi natus blanditiis illum voluptatibus excepturi iusto veritatis. Aliquam unde
+        facilis, architecto alias explicabo assumenda inventore officia voluptas, dolore, magnam ex. Accusamus facere
+        nesciunt itaque quae placeat obcaecati voluptatibus, dolorum reprehenderit rem minus, voluptas sunt voluptate
+        quibusdam incidunt dolorem doloribus dolores molestias neque illum consectetur iste veniam aperiam alias? Atque
+        debitis sunt animi repellendus odit, commodi omnis cupiditate eum placeat dicta ipsam beatae corporis veniam
+        nihil quia tempora delectus, quod laudantium libero ipsum cumque. Perferendis exercitationem illum ratione ipsa,
+        ut ab explicabo impedit! Quaerat ea assumenda distinctio eveniet aperiam accusamus illum soluta doloremque
+        numquam, impedit maiores, vel nihil quidem? Totam explicabo quaerat itaque nostrum obcaecati eligendi? Facere
+        excepturi quaerat esse perspiciatis ipsum sed eligendi sit commodi? Tempore fuga expedita quo blanditiis maxime.
+        Doloremque enim eveniet nesciunt voluptas, aliquam suscipit soluta doloribus repudiandae architecto nemo
+        accusamus! Sequi ab rem quia doloremque dolore ea rerum aliquam deleniti id autem modi dolor voluptatem minima
+        fugit quibusdam doloribus, vel repellendus ipsum sint quo veritatis quidem? Voluptates, rerum alias id optio
+        cumque soluta quae laboriosam, eum et eveniet iure blanditiis labore deleniti qui cum est eligendi, vitae
+        tempore rem pariatur doloremque aperiam nihil. Eum tempore obcaecati similique illo sunt praesentium cum nulla
+        ipsam! Optio, tempore blanditiis. Earum placeat ullam sit eveniet, ad in amet! Quis reiciendis odit, non ea
+        recusandae ratione cumque sed rem?</p>
+    <span id="itemClose" class="item-page__close">back</span>
+</div>
+    `
+    document.body.append(itemPage);
 }
+
 
